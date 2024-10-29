@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12">
+            <h1>User albums</h1>
+            <p *ngIf="isLoading()">Loading...</p>
+            <div *ngIf="!isLoading()">
+                <div class="albums" *ngFor="let album of albums(); let i = index">
+                    <div>
+                        <p>{{ (i + 1) + ' - ' + album.title}}</p>
+                        <button type="button" (click)="togglePhotos(album.id)">Toggle photos</button>
+                        <div *ngIf="showAlbumPhotos.includes(album.id)">
+                            <div *ngFor="let img of albumsPhotos">
+                                <img *ngIf="img.albumId === album.id" src={{img.thumbnailUrl}} alt={{img.title}}>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

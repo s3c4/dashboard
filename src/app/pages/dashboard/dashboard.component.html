@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <h1>Users Dashboard</h1>
+            <form [formGroup]="myForm">
+                <input type="text" formControlName="search">
+            </form>
+            <br>
+            <ul *ngFor="let user of users">
+                <li><app-user-row [user]="user"></app-user-row></li>
+            </ul>
+            <p *ngIf="!!users && users.length <= 0">No users</p>
+        </div>
+    </div>
+</div>

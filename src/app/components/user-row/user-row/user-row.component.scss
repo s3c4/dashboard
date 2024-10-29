@@ -1,0 +1,26 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    >div {
+        display: flex;
+        &:last-child {
+            margin-left: auto;
+            align-items: center;
+
+            a {
+                display: inline-block;
+                margin-left: 20px;
+                text-decoration: none;
+                text-transform: uppercase;
+                background-color: #7ED4AD;
+                padding: 10px 20px;
+                border-radius: 20px;
+                color: white;
+                &:last-child {
+                    background-color: #D76C82;
+                }
+            }
+        }
+    }
+}
